@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1920</width>
-    <height>1080</height>
+    <width>1968</width>
+    <height>971</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -23,8 +23,377 @@
     </rect>
    </property>
    <property name="title">
-    <string>GroupBox</string>
+    <string>Control Box</string>
    </property>
+   <widget class="QPushButton" name="SwRelease">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>331</width>
+      <height>61</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Software 배포</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_2">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>130</y>
+     <width>1200</width>
+     <height>930</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Client Monitoring</string>
+   </property>
+   <widget class="QLabel" name="Monitor_1">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>40</y>
+      <width>380</width>
+      <height>280</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Monitor_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>340</y>
+      <width>380</width>
+      <height>280</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Monito_7">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>640</y>
+      <width>380</width>
+      <height>280</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Monitor_2">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>40</y>
+      <width>380</width>
+      <height>280</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Monitor_3">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>40</y>
+      <width>380</width>
+      <height>280</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Monitor_5">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>340</y>
+      <width>380</width>
+      <height>280</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Monitor_8">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>640</y>
+      <width>380</width>
+      <height>280</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Monitor_6">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>340</y>
+      <width>380</width>
+      <height>280</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="Monitor_9">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>640</y>
+      <width>380</width>
+      <height>280</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>60</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PC1</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>20</y>
+      <width>60</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PC2</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>20</y>
+      <width>60</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PC3</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>320</y>
+      <width>60</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PC4</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>320</y>
+      <width>60</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PC5</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>320</y>
+      <width>60</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PC6</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>620</y>
+      <width>60</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PC7</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>410</x>
+      <y>620</y>
+      <width>60</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PC8</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>810</x>
+      <y>620</y>
+      <width>60</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>PC9</string>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QGroupBox" name="groupBox_3">
+   <property name="geometry">
+    <rect>
+     <x>1240</x>
+     <y>130</y>
+     <width>660</width>
+     <height>930</height>
+    </rect>
+   </property>
+   <property name="title">
+    <string>Status</string>
+   </property>
+   <widget class="QTableWidget" name="tableWidget">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>30</y>
+      <width>631</width>
+      <height>890</height>
+     </rect>
+    </property>
+    <attribute name="horizontalHeaderDefaultSectionSize">
+     <number>58</number>
+    </attribute>
+    <attribute name="verticalHeaderDefaultSectionSize">
+     <number>38</number>
+    </attribute>
+    <row>
+     <property name="text">
+      <string>연결</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>소유자</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>New Map 클릭 횟수</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>New Map 시간</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>Comment</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>새 열</string>
+     </property>
+    </row>
+    <row>
+     <property name="text">
+      <string>새 열</string>
+     </property>
+    </row>
+    <column>
+     <property name="text">
+      <string>PC1</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>PC2</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>PC3</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>PC4</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>PC5</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>PC6</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>PC7</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>PC8</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>PC9</string>
+     </property>
+    </column>
+   </widget>
   </widget>
  </widget>
  <resources/>
