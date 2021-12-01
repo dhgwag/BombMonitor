@@ -14,7 +14,15 @@ class Form(QtWidgets.QMainWindow, form_class):
 
         self.pushButton_SwRelease.clicked.connect(self.clickSwRelease)
 
-        self.Monitor_1.setPixmap(QtGui.QPixmap("screenshot/1.png"))  # image path
+        self.Monitor_1.setPixmap(QtGui.QPixmap("screenshot/1.png").scaledToWidth(380))
+        self.Monitor_2.setPixmap(QtGui.QPixmap("screenshot/1.png").scaledToWidth(380))
+        self.Monitor_3.setPixmap(QtGui.QPixmap("screenshot/1.png").scaledToWidth(380))
+        self.Monitor_4.setPixmap(QtGui.QPixmap("screenshot/1.png").scaledToWidth(380))
+        self.Monitor_5.setPixmap(QtGui.QPixmap("screenshot/1.png").scaledToWidth(380))
+        self.Monitor_6.setPixmap(QtGui.QPixmap("screenshot/1.png").scaledToWidth(380))
+        self.Monitor_7.setPixmap(QtGui.QPixmap("screenshot/1.png").scaledToWidth(380))
+        self.Monitor_8.setPixmap(QtGui.QPixmap("screenshot/1.png").scaledToWidth(380))
+        self.Monitor_9.setPixmap(QtGui.QPixmap("screenshot/1.png").scaledToWidth(380))
 
         '''
         index = 0
