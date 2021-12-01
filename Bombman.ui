@@ -25,7 +25,7 @@
    <property name="title">
     <string>Control Box</string>
    </property>
-   <widget class="QPushButton" name="SwRelease">
+   <widget class="QPushButton" name="pushButton_SwRelease">
     <property name="geometry">
      <rect>
       <x>10</x>
@@ -308,7 +308,7 @@
      </rect>
     </property>
     <attribute name="horizontalHeaderDefaultSectionSize">
-     <number>58</number>
+     <number>56</number>
     </attribute>
     <attribute name="verticalHeaderDefaultSectionSize">
      <number>38</number>

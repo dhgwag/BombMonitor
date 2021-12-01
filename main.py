@@ -8,57 +8,12 @@ RC_Serial = [520892, 520896]
 
 form_class = uic.loadUiType("Bombman.ui")[0]
 
-
-class Relay_Channel():
-    def __init__(self, chno, parent, SN):
-        self.ch_no = chno
-        self.parent = parent
-
-    def onDigitalOutput_Connect(self):
-
-        # Assign any event handlers you need before calling open so that no events are missed.
-        self.digitalOutput.setOnAttachHandler(self.onDigitalOutput_Attach)
-        self.digitalOutput.setOnDetachHandler(self.onDigitalOutput_Detach)
-        self.digitalOutput.setOnErrorHandler(self.onDigitalOutput_Error)
-
-        try:
-            # Open your Phidgets and wait for attachment
-            self.digitalOutput.openWaitForAttachment(500)
-            return True
-
-        except PhidgetException as ex:
-            # We will catch Phidget Exceptions here, and print the error informaiton.
-            return False
-            traceback.print_exc()
-            print("")
-            print("PhidgetException " + str(ex.code) + " (" + ex.description + "): " + ex.details)
-
-    def onDigitalOutput_On(self):
-        # Do stuff with your Phidgets here or in your event handlers.
-        self.digitalOutput.setDutyCycle(1)
-
-    def onDigitalOutput_Off(self):
-        # Do stuff with your Phidgets here or in your event handlers.
-        self.digitalOutput.setDutyCycle(0)
-
-    def onDigitalOutput_Attach(self, none):
-        print("Attach [" + str(self.ch_no) + "]!")
-        self.parent.attached(self.ch_no)
-
-    def onDigitalOutput_Detach(self, none):
-        print("Detach [" + str(self.ch_no) + "]!")
-        self.parent.detached(self.ch_no)
-
-    def onDigitalOutput_Error(self, code, description, none):
-        print("Code [" + str(self.ch_no) + "]: " + ErrorEventCode.getName(code))
-        print("Description [" + str(self.ch_no) + "]: " + str(description))
-        print("----------")
-
-
 class Form(QtWidgets.QMainWindow, form_class):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+
+        self.pushButton_SwRelease.clicked.connect(self.clickSwRelease)
 
         '''
         index = 0
@@ -112,129 +67,12 @@ class Form(QtWidgets.QMainWindow, form_class):
     def closeEvent(self, event):
         message = QtWidgets.QMessageBox.question(self, "Question", "Are you sure you want to quit?")
         if message == QtWidgets.QMessageBox.Yes:
-            self.relay0.onDigitalOutput_Off()
-            self.pushButton_ch1.setStyleSheet("background-color: red")
-            self.pushButton_ch1.setText("OFF")
-            self.relay1.onDigitalOutput_Off()
-            self.pushButton_ch2.setStyleSheet("background-color: red")
-            self.pushButton_ch2.setText("OFF")
-            self.relay2.onDigitalOutput_Off()
-            self.pushButton_ch3.setStyleSheet("background-color: red")
-            self.pushButton_ch3.setText("OFF")
-            self.relay3.onDigitalOutput_Off()
-            self.pushButton_ch4.setStyleSheet("background-color: red")
-            self.pushButton_ch4.setText("OFF")
-
             event.accept()
         else:
             event.ignore()
 
-    def clickMethod1(self):
-        if (self.label_ch1_3.text() != "Disconnected"):
-            if (self.pushButton_ch1.text() == "ON"):
-                self.relay0.onDigitalOutput_Off()
-                self.pushButton_ch1.setStyleSheet("background-color: red")
-                self.pushButton_ch1.setText("OFF")
-            else:
-                self.relay0.onDigitalOutput_On()
-                self.pushButton_ch1.setStyleSheet("background-color: green")
-                self.pushButton_ch1.setText("ON")
-        else:
-            QtWidgets.QMessageBox.about(self, "Error", "Relay is not connected")
-
-    def clickMethod2(self):
-        if (self.label_ch2_3.text() != "Disconnected"):
-            if (self.pushButton_ch2.text() == "ON"):
-                self.relay1.onDigitalOutput_Off()
-                self.pushButton_ch2.setStyleSheet("background-color: red")
-                self.pushButton_ch2.setText("OFF")
-            else:
-                self.relay1.onDigitalOutput_On()
-                self.pushButton_ch2.setStyleSheet("background-color: green")
-                self.pushButton_ch2.setText("ON")
-        else:
-            QtWidgets.QMessageBox.about(self, "Error", "Relay is not connected")
-
-    def clickMethod3(self):
-        if (self.label_ch3_3.text() != "Disconnected"):
-            if (self.pushButton_ch3.text() == "ON"):
-                self.relay2.onDigitalOutput_Off()
-                self.pushButton_ch3.setStyleSheet("background-color: red")
-                self.pushButton_ch3.setText("OFF")
-            else:
-                self.relay2.onDigitalOutput_On()
-                self.pushButton_ch3.setStyleSheet("background-color: green")
-                self.pushButton_ch3.setText("ON")
-        else:
-            QtWidgets.QMessageBox.about(self, "Error", "Relay is not connected")
-
-    def clickMethod4(self):
-        if (self.label_ch4_3.text() != "Disconnected"):
-            if (self.pushButton_ch4.text() == "ON"):
-                self.relay3.onDigitalOutput_Off()
-                self.pushButton_ch4.setStyleSheet("background-color: red")
-                self.pushButton_ch4.setText("OFF")
-            else:
-                self.relay3.onDigitalOutput_On()
-                self.pushButton_ch4.setStyleSheet("background-color: green")
-                self.pushButton_ch4.setText("ON")
-        else:
-            QtWidgets.QMessageBox.about(self, "Error", "Relay is not connected")
-
-    def attached(self, ch):
-        if (ch == 0):
-            self.relay0.onDigitalOutput_Off()
-            self.label_ch1_3.setStyleSheet("color: green")
-            self.label_ch1_3.setText("Connected")
-            self.pushButton_ch1.setStyleSheet("background-color: red")
-            self.pushButton_ch1.setText("OFF")
-
-        elif (ch == 1):
-            self.relay1.onDigitalOutput_Off()
-            self.label_ch2_3.setStyleSheet("color: green")
-            self.label_ch2_3.setText("Connected")
-            self.pushButton_ch2.setStyleSheet("background-color: red")
-            self.pushButton_ch2.setText("OFF")
-
-        elif (ch == 2):
-            self.relay2.onDigitalOutput_Off()
-            self.label_ch3_3.setStyleSheet("color: green")
-            self.label_ch3_3.setText("Connected")
-            self.pushButton_ch3.setStyleSheet("background-color: red")
-            self.pushButton_ch3.setText("OFF")
-
-        elif (ch == 3):
-            self.relay3.onDigitalOutput_Off()
-            self.label_ch4_3.setStyleSheet("color: green")
-            self.label_ch4_3.setText("Connected")
-            self.pushButton_ch4.setStyleSheet("background-color: red")
-            self.pushButton_ch4.setText("OFF")
-
-    def detached(self, ch):
-        if (ch == 0):
-            self.label_ch1_3.setStyleSheet("color: red")
-            self.label_ch1_3.setText("Disconnected")
-            self.pushButton_ch1.setStyleSheet("background-color: red")
-            self.pushButton_ch1.setText("OFF")
-
-        elif (ch == 1):
-            self.label_ch2_3.setStyleSheet("color: red")
-            self.label_ch2_3.setText("Disconnected")
-            self.pushButton_ch2.setStyleSheet("background-color: red")
-            self.pushButton_ch2.setText("OFF")
-
-        elif (ch == 2):
-            self.label_ch3_3.setStyleSheet("color: red")
-            self.label_ch3_3.setText("Disconnected")
-            self.pushButton_ch3.setStyleSheet("background-color: red")
-            self.pushButton_ch3.setText("OFF")
-
-        elif (ch == 3):
-            self.label_ch4_3.setStyleSheet("color: red")
-            self.label_ch4_3.setText("Disconnected")
-            self.pushButton_ch4.setStyleSheet("background-color: red")
-            self.pushButton_ch4.setText("OFF")
-
+    def clickSwRelease(self):
+        message = QtWidgets.QMessageBox.question(self, "Question", "Do you want to release Software?")
 
 if __name__ == '__main__':
     app = QtWidgets.QApplication(sys.argv)
