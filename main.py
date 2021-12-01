@@ -1,10 +1,9 @@
 import sys
 from PyQt5 import QtWidgets
 from PyQt5 import uic
+from PyQt5 import QtGui
 import traceback
 import time
-
-RC_Serial = [520892, 520896]
 
 form_class = uic.loadUiType("Bombman.ui")[0]
 
@@ -14,6 +13,8 @@ class Form(QtWidgets.QMainWindow, form_class):
         self.setupUi(self)
 
         self.pushButton_SwRelease.clicked.connect(self.clickSwRelease)
+
+        self.Monitor_1.setPixmap(QtGui.QPixmap("screenshot/1.png"))  # image path
 
         '''
         index = 0
