@@ -6,7 +6,7 @@ import time
 
 RC_Serial = [520892, 520896]
 
-form_class = uic.loadUiType("RC.ui")[0]
+form_class = uic.loadUiType("Bombman.ui")[0]
 
 
 class Relay_Channel():
